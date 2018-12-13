@@ -1,6 +1,10 @@
 import { Icon, Menu, Sidebar, Button } from "semantic-ui-react";
-import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import React, { Component } from "react";
+
+import pages from "../../../data/pagesData";
+
+import "./MainMenu.scss";
 
 class MainMenu extends Component {
   render() {
@@ -14,84 +18,49 @@ class MainMenu extends Component {
           vertical
           visible={true}
           width="thin"
+          style={{ width: 200 }}
         >
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Dashboard
-              </span>
-            </Menu.Item>
-          </NavLink>
-
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Schedule
-              </span>
-            </Menu.Item>
-          </NavLink>
-
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Courses
-              </span>
-            </Menu.Item>
-          </NavLink>
-
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Gradebook
-              </span>
-            </Menu.Item>
-          </NavLink>
-
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Performance
-              </span>
-            </Menu.Item>
-          </NavLink>
-
-          <NavLink to="/">
-            <Menu.Item as="span" onClick={e => {}}>
-              {/* <Icon name={page.icon} /> */}
-              <span
-                style={{
-                  textTransform: "capitalize"
-                }}
-              >
-                Announcements
-              </span>
-            </Menu.Item>
-          </NavLink>
+          {pages.map(page => {
+            return (
+              <NavLink to={page.path} key={page.path}>
+                <Menu.Item as="span" className={page.path} onClick={e => {}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row"
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: 1,
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center"
+                      }}
+                    >
+                      <Icon name={page.icon} size="big" />
+                    </div>
+                    <div
+                      style={{
+                        flex: 2,
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center"
+                      }}
+                    >
+                      <span
+                        style={{
+                          textTransform: "capitalize"
+                        }}
+                      >
+                        {page.name}
+                      </span>
+                    </div>
+                  </div>
+                </Menu.Item>
+              </NavLink>
+            );
+          })}
         </Sidebar>
       </>
     );
