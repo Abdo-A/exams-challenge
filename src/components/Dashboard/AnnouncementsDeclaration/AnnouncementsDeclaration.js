@@ -2,6 +2,7 @@ import { Card } from "semantic-ui-react";
 import React, { Component } from "react";
 
 import "./AnnouncementsDeclaration.scss";
+import AnnouncementsDeclarationItem from "./AnnouncementsDeclarationItem/AnnouncementsDeclarationItem";
 
 class AnnouncementsDeclaration extends Component {
   render() {
@@ -27,6 +28,15 @@ class AnnouncementsDeclaration extends Component {
           <p className="AnnouncementsDeclaration__Subheader">
             We educate warriors! Keep updated
           </p>
+
+          {this.props.announcements.map(announcement => (
+            <AnnouncementsDeclarationItem
+              name={announcement.name}
+              subject={announcement.subject}
+              image={announcement.image}
+              announcement={announcement.announcement}
+            />
+          ))}
         </div>
       </Card>
     );

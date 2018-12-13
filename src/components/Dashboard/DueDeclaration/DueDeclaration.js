@@ -2,6 +2,7 @@ import { Card } from "semantic-ui-react";
 import React, { Component } from "react";
 
 import "./DueDeclaration.scss";
+import DueDeclarationItem from "./DueDeclarationItem/DueDeclarationItem";
 
 class DueDeclaration extends Component {
   render() {
@@ -24,6 +25,9 @@ class DueDeclaration extends Component {
           <div className="DueDeclaration__Subheader">
             Sometimes "LATER" becomes "NEVER", Go Now
           </div>
+          <DueDeclarationItem />
+          <DueDeclarationItem />
+          <DueDeclarationItem />
         </div>
       </Card>
     );
