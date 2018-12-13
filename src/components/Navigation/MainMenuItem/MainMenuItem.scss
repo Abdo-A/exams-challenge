@@ -1,17 +1,17 @@
-.itemWrapper {
+.MainMenuItem__ItemWrapper {
   display: flex;
   flex-direction: row;
   font-weight: bold;
   height: 45px;
 
-  .iconWrapper {
+  .MainMenuItem__ItemWrapper__IconWrapper {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .itemNameWrapper {
+  .MainMenuItem__ItemWrapper__ItemNameWrapper {
     flex: 2;
     display: flex;
     justify-content: flex-start;

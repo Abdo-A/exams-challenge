@@ -69,7 +69,7 @@ class MainMenu extends Component {
           backgroundImage: "linear-gradient(#084361, #3C8399)"
         }}
       >
-        <h1 className="menuHeader">coligo</h1>
+        <h1 className="MainMenu__MenuHeader">coligo</h1>
         {pages.map(page => {
           return (
             <MainMenuItem

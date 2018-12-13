@@ -13,11 +13,13 @@ const MainMenuItem = props => {
         onMouseEnter={props.handleMouseEnter}
         onMouseLeave={props.handleMouseLeave}
       >
-        <div className="itemWrapper">
-          <div className="iconWrapper">
+        <div className="MainMenuItem__ItemWrapper">
+          <div className="MainMenuItem__ItemWrapper__IconWrapper">
             <Icon name={props.icon} size="big" />
           </div>
-          <div className="itemNameWrapper">{props.name}</div>
+          <div className="MainMenuItem__ItemWrapper__ItemNameWrapper">
+            {props.name}
+          </div>
         </div>
       </Menu.Item>
     </NavLink>
