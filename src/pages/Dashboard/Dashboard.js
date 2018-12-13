@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./Dashboard.scss";
+import Header from "../../components/PageTop/Header/Header";
 
 class Dashboard extends Component {
   render() {
     return (
-      <>
-        <h1>Dashboard</h1>
-      </>
+      <div className="Dashboard">
+        <Header />
+      </div>
     );
   }
 }
