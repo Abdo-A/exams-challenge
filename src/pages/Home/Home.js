@@ -1,18 +1,31 @@
-import React, { Component } from "react";
-import "./Home.scss";
 import { Button } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import React, { Component } from "react";
+
+import * as authActions from "../../store/actions/authActions";
+
+import "./Home.scss";
 
 class Home extends Component {
+  logInHandler = () => {
+    this.props.logIn();
+    this.props.history.replace("/dashboard");
+  };
+
   render() {
     return (
       <>
-        <Link to="/dashboard">
-          <Button>Let me in</Button>
-        </Link>
+        <Button onClick={this.logInHandler}>Let me in</Button>
       </>
     );
   }
 }
 
-export default Home;
+const mapDispatchToProps = {
+  logIn: authActions.logIn
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Home);

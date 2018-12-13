@@ -1,11 +1,18 @@
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const requireAuth = props => {
-  if (true) return props.children;
+  if (props.loggedIn) return props.children;
   else {
     props.history.replace("/");
     return null;
   }
 };
 
-export default withRouter(requireAuth);
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.auth.loggedIn
+  };
+};
+
+export default connect(mapStateToProps)(withRouter(requireAuth));
