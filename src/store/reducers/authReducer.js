@@ -1,7 +1,8 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
-  loggedIn: true
+  loggedIn: false,
+  username: "Talia"
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -9,13 +10,15 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.LOG_IN:
       return {
         ...state,
-        loggedIn: true
+        loggedIn: true,
+        username: action.username
       };
 
     case actionTypes.LOG_OUT:
       return {
         ...state,
-        loggedIn: false
+        loggedIn: false,
+        username: "Talia"
       };
     default:
       return state;

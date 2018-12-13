@@ -1,0 +1,48 @@
+@import "../../assets/colors.scss";
+
+.Home {
+  height: 100vh;
+  background-image: url("../../assets/images/home_background.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .Home__ContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #4bb493af;
+    height: 60vh;
+    width: 60vh;
+
+    .Home__Welcome {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .Home__WelcomeHeader {
+      font-size: 40px;
+    }
+
+    .Home__Button {
+      background-color: $green02;
+      color: white;
+      border: 2px solid $green02;
+      margin-top: 50px;
+
+      &:hover {
+        background-color: white;
+        color: $green02;
+      }
+    }
+
+    .Home__Warning {
+      color: red;
+      font-weight: bold;
+    }
+  }
+}

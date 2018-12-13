@@ -1,8 +1,9 @@
 import * as actionTypes from "./actionTypes";
 
-export const logIn = () => {
+export const logIn = username => {
   return {
-    type: actionTypes.LOG_IN
+    type: actionTypes.LOG_IN,
+    username: username
   };
 };
 

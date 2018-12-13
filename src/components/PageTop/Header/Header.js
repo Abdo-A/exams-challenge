@@ -3,13 +3,14 @@ import React, { Component } from "react";
 import "./Header.scss";
 import { Search } from "semantic-ui-react";
 import Badge from "../Badge/Badge";
+import { connect } from "react-redux";
 
 class Header extends Component {
   render() {
     return (
       <div className="Header">
         <div className="Header__Heading">
-          <h1>Welcome Talia,</h1>
+          <h1>Welcome {this.props.username},</h1>
         </div>
         <div className="Header__LeftContainer">
           <div className="Header__LeftContainer__SearchInput">
@@ -35,4 +36,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    username: state.auth.username
+  };
+};
+
+export default connect(mapStateToProps)(Header);
