@@ -1,5 +1,7 @@
-import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
+import React, { Component } from "react";
+
+import "./AnnouncementsDeclaration.scss";
 
 class AnnouncementsDeclaration extends Component {
   render() {

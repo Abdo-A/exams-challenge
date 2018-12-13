@@ -1,5 +1,7 @@
+@import "./assets/colors.scss";
+
 body {
-  background-color: #f4f5f2;
+  background-color: $grey01;
 }
 
 .App {

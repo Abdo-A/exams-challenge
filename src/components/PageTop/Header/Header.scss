@@ -1,3 +1,5 @@
+@import "../../../assets/colors.scss";
+
 .Header {
   height: 8vh;
   width: 100%;
@@ -9,7 +11,7 @@
   margin-bottom: 40px;
 
   .Header__Heading {
-    color: #636c6b;
+    color: $grey03;
   }
 
   .Header__LeftContainer {
