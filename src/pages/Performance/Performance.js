@@ -4,7 +4,7 @@ class Performance extends Component {
   render() {
     return (
       <>
-        <h1>Performance</h1>
+        <h1 className="Header--Animated">Performance</h1>
       </>
     );
   }

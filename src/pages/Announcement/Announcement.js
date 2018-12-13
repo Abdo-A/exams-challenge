@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
+import "../../assets/animatedHeader.scss";
+
 class Announcement extends Component {
   render() {
     return (
       <>
-        <h1>Announcement</h1>
+        <h1 className="Header--Animated">Announcement</h1>
       </>
     );
   }

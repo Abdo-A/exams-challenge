@@ -1,0 +1,27 @@
+@import "./colors.scss";
+
+.Header--Animated {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  margin: 0;
+  animation: swim 6s ease-in infinite alternate;
+}
+
+@keyframes swim {
+  0% {
+    background-color: $secondary-color;
+  }
+  50% {
+    padding-top: 90vh;
+    background-color: $primary-color;
+  }
+  75% {
+    padding-left: 90vh;
+    background-color: $primary-color;
+  }
+  100% {
+    padding-right: 90vh;
+    background-color: $primary-color;
+  }
+}
