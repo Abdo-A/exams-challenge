@@ -17,28 +17,25 @@ class ExamsDeclaration extends Component {
         }}
       >
         <div className="ExamsDeclaration__ContentContainer">
-          <div className="ExamsDeclaration__ContentContainer__Left">
+          <div className="ExamsDeclaration__Left">
             <p className="ExamsDeclaration__Header">Exams Time</p>
-            <p className="ExamsDeclaration__ContentContainer__Paragraph">
+            <p className="ExamsDeclaration__Paragraph">
               Here we are, Are you ready to fight? Don't worry, we prepared some
               tops to be ready for your exams.
             </p>
-            <p className="ExamsDeclaration__ContentContainer__Quote">
+            <p className="ExamsDeclaration__Quote">
               "Nothing happens until something movies." ~ Albert Einstein
             </p>
             <Button
-              className="ExamsDeclaration__ContentContainer__Button"
+              className="ExamsDeclaration__Button"
               style={{ backgroundColor: colors.green02, color: "white" }}
             >
               View exams tips
             </Button>
           </div>
 
-          <div className="ExamsDeclaration__ContentContainer__Right">
-            <img
-              src={exams_time}
-              className="ExamsDeclaration__ContentContainer__Image"
-            />
+          <div className="ExamsDeclaration__Right">
+            <img src={exams_time} className="ExamsDeclaration__Image" />
           </div>
         </div>
       </Card>

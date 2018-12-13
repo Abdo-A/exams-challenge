@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  .ExamsDeclaration__ContentContainer__Left {
+  .ExamsDeclaration__Left {
     margin: 20px 30px;
     text-align: left;
 
@@ -22,17 +22,17 @@
       background-clip: text;
     }
 
-    .ExamsDeclaration__ContentContainer__Paragraph {
+    .ExamsDeclaration__Paragraph {
       color: $grey03;
       font-size: 20px;
     }
 
-    .ExamsDeclaration__ContentContainer__Quote {
+    .ExamsDeclaration__Quote {
       color: $grey02;
       font-style: italic;
     }
 
-    .ExamsDeclaration__ContentContainer__Button {
+    .ExamsDeclaration__Button {
       background-color: $green02;
       color: white;
       width: 30%;
@@ -41,11 +41,11 @@
     }
   }
 
-  .ExamsDeclaration__ContentContainer__Right {
+  .ExamsDeclaration__Right {
     width: 47%;
   }
 
-  .ExamsDeclaration__ContentContainer__Image {
+  .ExamsDeclaration__Image {
     height: 35vh;
   }
 }

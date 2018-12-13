@@ -1,0 +1,35 @@
+@import "../../../assets/colors.scss";
+
+.DueDeclaration__ContentContainer {
+  padding: 15px;
+
+  .DueDeclaration__Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+
+    .DueDeclaration__Header__Left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: $grey03;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .DueDeclaration__Header__Right {
+      color: $green02;
+      font-weight: bold;
+      font-size: 21px;
+      cursor: pointer;
+    }
+  }
+
+  .DueDeclaration__Subheader {
+    color: $grey02;
+    font-size: 12px;
+    text-align: left;
+  }
+}
