@@ -32,4 +32,11 @@
     font-size: 12px;
     text-align: left;
   }
+
+  .DueDeclaration__ItemsSeparator {
+    height: 1px;
+    color: $grey02;
+    background-color: $grey02;
+    border: none;
+  }
 }

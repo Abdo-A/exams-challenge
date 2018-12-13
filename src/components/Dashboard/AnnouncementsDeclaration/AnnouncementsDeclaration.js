@@ -6,6 +6,12 @@ import AnnouncementsDeclarationItem from "./AnnouncementsDeclarationItem/Announc
 
 class AnnouncementsDeclaration extends Component {
   render() {
+    let noAnnouncementsMessage = null;
+
+    if (!this.props.announcements || this.props.announcements.length <= 0) {
+      noAnnouncementsMessage = <h1>No announcements to show now :)</h1>;
+    }
+
     return (
       <Card
         style={{
@@ -29,14 +35,18 @@ class AnnouncementsDeclaration extends Component {
             We educate warriors! Keep updated
           </p>
 
-          {this.props.announcements.map(announcement => (
-            <AnnouncementsDeclarationItem
-              name={announcement.name}
-              subject={announcement.subject}
-              image={announcement.image}
-              announcement={announcement.announcement}
-            />
-          ))}
+          {this.props.announcements
+            ? this.props.announcements.map(announcement => (
+                <AnnouncementsDeclarationItem
+                  name={announcement.name}
+                  subject={announcement.subject}
+                  image={announcement.image}
+                  announcement={announcement.announcement}
+                />
+              ))
+            : null}
+
+          {noAnnouncementsMessage}
         </div>
       </Card>
     );

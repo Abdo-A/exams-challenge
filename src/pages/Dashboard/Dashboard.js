@@ -6,6 +6,7 @@ import ExamsDeclaration from "../../components/Dashboard/ExamsDeclaration/ExamsD
 import AnnouncementsDeclaration from "../../components/Dashboard/AnnouncementsDeclaration/AnnouncementsDeclaration";
 import DueDeclaration from "../../components/Dashboard/DueDeclaration/DueDeclaration";
 import announcements from "../../data/announcements";
+import quizzes from "../../data/quizzes";
 
 class Dashboard extends Component {
   render() {
@@ -17,7 +18,7 @@ class Dashboard extends Component {
         </div>
         <div className="Dashboard__SecondRowContainer">
           <AnnouncementsDeclaration announcements={announcements} />
-          <DueDeclaration />
+          <DueDeclaration quizzes={quizzes} />
         </div>
       </div>
     );

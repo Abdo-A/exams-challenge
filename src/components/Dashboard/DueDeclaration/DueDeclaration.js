@@ -6,6 +6,12 @@ import DueDeclarationItem from "./DueDeclarationItem/DueDeclarationItem";
 
 class DueDeclaration extends Component {
   render() {
+    let nothingDueMessage = null;
+
+    if (!this.props.quizzes || this.props.quizzes.length <= 0) {
+      nothingDueMessage = <h1>Nothing due! :)</h1>;
+    }
+
     return (
       <Card
         style={{
@@ -25,9 +31,26 @@ class DueDeclaration extends Component {
           <div className="DueDeclaration__Subheader">
             Sometimes "LATER" becomes "NEVER", Go Now
           </div>
-          <DueDeclarationItem />
-          <DueDeclarationItem />
-          <DueDeclarationItem />
+
+          {this.props.quizzes
+            ? this.props.quizzes.map((quiz, i) => (
+                <>
+                  <DueDeclarationItem
+                    title={quiz.title}
+                    course={quiz.course}
+                    topic={quiz.topic}
+                    dueTo={quiz.dueTo}
+                    type={quiz.type}
+                    motivator={quiz.motivator}
+                  />
+                  {i !== this.props.quizzes.length - 1 ? (
+                    <hr className="DueDeclaration__ItemsSeparator" />
+                  ) : null}
+                </>
+              ))
+            : null}
+
+          {nothingDueMessage}
         </div>
       </Card>
     );

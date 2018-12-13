@@ -26,10 +26,7 @@ class ExamsDeclaration extends Component {
             <p className="ExamsDeclaration__Quote">
               "Nothing happens until something movies." ~ Albert Einstein
             </p>
-            <Button
-              className="ExamsDeclaration__Button"
-              style={{ backgroundColor: colors.green02, color: "white" }}
-            >
+            <Button className="ExamsDeclaration__Button">
               View exams tips
             </Button>
           </div>

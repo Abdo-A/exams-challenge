@@ -1,0 +1,44 @@
+@import "../../../../assets/colors.scss";
+
+.DueDeclarationItem {
+  margin: 30px 0 30px 0;
+  text-align: left;
+
+  .DueDeclarationItem__Top {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+    .DueDeclarationItem__Top__Icon {
+      color: $green02;
+    }
+
+    .DueDeclarationItem__Top__Title {
+      font-weight: bold;
+      color: $grey03;
+    }
+  }
+
+  .DueDeclarationItem__Info {
+    color: $grey02;
+    margin-bottom: 10px;
+
+    .DueDeclarationItem__Info__Intro {
+      font-weight: bold;
+    }
+  }
+
+  .DueDeclarationItem__Button {
+    width: 100%;
+    color: $green02;
+    background-color: transparent;
+    border: 2px solid $green02;
+    font-weight: bold;
+    font-size: 15px;
+
+    &:hover {
+      background-color: $green02;
+      color: white;
+    }
+  }
+}
