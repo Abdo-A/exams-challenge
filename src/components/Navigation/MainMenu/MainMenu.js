@@ -1,68 +1,89 @@
-import { Icon, Menu, Sidebar, Button } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { Menu, Sidebar } from "semantic-ui-react";
 import React, { Component } from "react";
 
+import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import pages from "../../../data/pagesData";
 
 import "./MainMenu.scss";
+import colors from "../../../assets/colors";
 
 class MainMenu extends Component {
+  componentDidMount() {
+    this.settleTabAccordingToPath();
+  }
+
+  //To check the path and update the clicked color of the current element immediately
+  settleTabAccordingToPath = () => {
+    Array.from(document.getElementsByClassName("item")).forEach(element => {
+      element.style.backgroundColor = "transparent";
+      element.style.color = "white";
+    });
+    Array.from(
+      document.getElementsByClassName(this.props.location.pathname)
+    ).forEach(element => {
+      element.style.backgroundColor = "white";
+      element.style.color = "#084361";
+    });
+  };
+
+  //on item click
+  handleMenuItemClick = e => {
+    Array.from(document.getElementsByClassName("item")).forEach(element => {
+      element.style.backgroundColor = "transparent";
+      element.style.color = "white";
+    });
+    e.currentTarget.style.backgroundColor = "white";
+    e.currentTarget.style.color = colors.primaryColor;
+  };
+
+  //on item hover
+  handleMenuItemHover = e => {
+    Array.from(document.getElementsByClassName("item")).forEach(element => {
+      element.style.backgroundColor = "transparent";
+      element.style.color = "white";
+    });
+
+    Array.from(
+      document.getElementsByClassName(this.props.location.pathname)
+    ).forEach(element => {
+      element.style.backgroundColor = "white";
+      element.style.color = colors.primaryColor;
+    });
+
+    e.currentTarget.style.backgroundColor = "rgba(224, 214, 214, 0.61)";
+    e.currentTarget.style.color = "#04537B";
+  };
+
   render() {
     return (
-      <>
-        <Sidebar
-          as={Menu}
-          animation="overlay"
-          icon="labeled"
-          inverted
-          vertical
-          visible={true}
-          width="thin"
-          style={{ width: 200 }}
-        >
-          {pages.map(page => {
-            return (
-              <NavLink to={page.path} key={page.path}>
-                <Menu.Item as="span" className={page.path} onClick={e => {}}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row"
-                    }}
-                  >
-                    <div
-                      style={{
-                        flex: 1,
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "center"
-                      }}
-                    >
-                      <Icon name={page.icon} size="big" />
-                    </div>
-                    <div
-                      style={{
-                        flex: 2,
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "center"
-                      }}
-                    >
-                      <span
-                        style={{
-                          textTransform: "capitalize"
-                        }}
-                      >
-                        {page.name}
-                      </span>
-                    </div>
-                  </div>
-                </Menu.Item>
-              </NavLink>
-            );
-          })}
-        </Sidebar>
-      </>
+      <Sidebar
+        as={Menu}
+        animation="overlay"
+        icon="labeled"
+        inverted
+        vertical
+        visible={true}
+        width="thin"
+        style={{
+          width: 200,
+          backgroundImage: "linear-gradient(#084361, #3C8399)"
+        }}
+      >
+        <h1 className="menuHeader">coligo</h1>
+        {pages.map(page => {
+          return (
+            <MainMenuItem
+              handleClick={this.handleMenuItemClick}
+              handleMouseEnter={this.handleMenuItemHover}
+              handleMouseLeave={this.settleTabAccordingToPath}
+              icon={page.icon}
+              name={page.name}
+              path={page.path}
+              key={page.path}
+            />
+          );
+        })}
+      </Sidebar>
     );
   }
 }

@@ -5,7 +5,7 @@ class Layout extends Component {
   render() {
     return (
       <>
-        <MainMenu />
+        <MainMenu location={this.props.location} />
         {this.props.children}
       </>
     );

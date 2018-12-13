@@ -1,0 +1,21 @@
+.itemWrapper {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  height: 45px;
+
+  .iconWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .itemNameWrapper {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: capitalize;
+  }
+}

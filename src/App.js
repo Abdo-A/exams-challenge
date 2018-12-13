@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.scss";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Dashboard from "./pages/Dashboard/Dashboard";
 import Layout from "./hoc/Layout/Layout";
 import pages from "./data/pagesData";
 

@@ -7,19 +7,34 @@ import Schedule from "../pages/Schedule/Schedule";
 
 const pages = [
   { name: "dashboard", path: "/dashboard", icon: "home", component: Dashboard },
-  { name: "schedule", path: "/schedule", icon: "home", component: Schedule },
-  { name: "courses", path: "/courses", icon: "home", component: Courses },
-  { name: "gradebook", path: "/gradebook", icon: "home", component: Gradebook },
+  {
+    name: "schedule",
+    path: "/schedule",
+    icon: "calendar alternate outline",
+    component: Schedule
+  },
+  {
+    name: "courses",
+    path: "/courses",
+    icon: "sticky note",
+    component: Courses
+  },
+  {
+    name: "gradebook",
+    path: "/gradebook",
+    icon: "graduation",
+    component: Gradebook
+  },
   {
     name: "performance",
     path: "/performance",
-    icon: "home",
+    icon: "chart line",
     component: PerformancePage
   },
   {
     name: "announcement",
     path: "/announcement",
-    icon: "home",
+    icon: "announcement",
     component: Announcement
   }
 ];
