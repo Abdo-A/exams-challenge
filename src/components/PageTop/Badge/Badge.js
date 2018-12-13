@@ -1,14 +1,19 @@
-import { Icon } from "semantic-ui-react";
+import { Icon, Popup } from "semantic-ui-react";
 import React from "react";
-
-import colors from "../../../assets/colors";
 
 import "./Badge.scss";
 
 const Badge = props => {
   return (
     <div className="Badge">
-      <Icon name={props.iconName} size="big" className="Badge__Icon" />
+      <Popup
+        trigger={
+          <Icon name={props.iconName} size="big" className="Badge__Icon" />
+        }
+        content={props.content}
+        on="click"
+      />
+
       <span className="Badge__Count">{props.count}</span>
     </div>
   );

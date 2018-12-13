@@ -4,19 +4,20 @@
   margin: 10px;
   position: relative;
   cursor: pointer;
-}
-.Badge__Icon {
-  color: $green01;
-}
 
-.Badge__Count {
-  background-color: $green02;
-  position: absolute;
-  top: -10px;
-  right: 0;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  color: white;
-  border: 1px solid white;
+  .Badge__Icon {
+    color: $green01;
+  }
+
+  .Badge__Count {
+    background-color: $green02;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    color: white;
+    border: 1px solid white;
+  }
 }

@@ -15,8 +15,16 @@ class Header extends Component {
           <div className="Header__LeftContainer__SearchInput">
             <Search placeholder="Search" showNoResults={false} />
           </div>
-          <Badge iconName="bell" count={1} />
-          <Badge iconName="envelope" count={3} />
+          <Badge
+            iconName="bell"
+            count={1}
+            content="Notifications to be shown here"
+          />
+          <Badge
+            iconName="envelope"
+            count={3}
+            content="Messages to be shown here"
+          />
           <img
             className="Header__LeftContainer__ProfileImage"
             src="https://cdn140.picsart.com/253231893022202.jpg?c256x256"
