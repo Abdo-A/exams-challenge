@@ -11,7 +11,7 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <div className="Header__Heading">Welcome {this.props.username},</div>
+        <div className="Header__Heading">Welcome {this.props.username}!</div>
         <div className="Header__Container">
           <div className="Header__OpenMenuIcon" onClick={this.props.showMenu}>
             <Icon name="bars" size="big" />

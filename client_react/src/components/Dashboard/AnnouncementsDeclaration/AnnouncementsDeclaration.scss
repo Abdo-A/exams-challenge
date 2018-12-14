@@ -17,10 +17,6 @@
       font-weight: bold;
       color: $grey03;
       font-size: 21px;
-
-      .AnnouncementsDeclaration__Header__Subheading {
-        color: $grey02;
-      }
     }
 
     .AnnouncementsDeclaration__Header__Right {
@@ -35,6 +31,7 @@
     color: $grey02;
     font-size: 13px;
     text-align: left;
+    margin-bottom: 40px;
   }
 
   .AnnouncementsDeclaration__ItemsSeparator {

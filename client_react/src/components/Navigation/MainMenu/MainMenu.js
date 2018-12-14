@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Menu, Sidebar, Icon, Search } from "semantic-ui-react";
+import { Menu, Sidebar, Search } from "semantic-ui-react";
 import React, { Component } from "react";
 import withSizes from "react-sizes";
 

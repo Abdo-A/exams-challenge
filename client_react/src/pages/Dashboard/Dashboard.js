@@ -53,7 +53,7 @@ class Dashboard extends Component {
       <div className="Dashboard">
         <Header />
         <div className="Dashboard__HeadingMobile">
-          Welcome {this.props.username},
+          Welcome {this.props.username}!
         </div>
         <div className="Dashboard__ExamsDeclarationContainer">
           <ExamsDeclaration style={examsDeclarationStyle} />
