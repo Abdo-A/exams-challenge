@@ -40,6 +40,8 @@ class MainMenu extends Component {
     });
     e.currentTarget.style.backgroundColor = "white";
     e.currentTarget.style.color = colors.primaryColor;
+
+    this.props.hideMenu();
   };
 
   //on item hover
@@ -76,7 +78,7 @@ class MainMenu extends Component {
         <Backdrop show={this.props.menuVisible} onClick={this.props.hideMenu} />
         <Sidebar
           as={Menu}
-          animation="overlay"
+          animation="push"
           icon="labeled"
           inverted
           vertical

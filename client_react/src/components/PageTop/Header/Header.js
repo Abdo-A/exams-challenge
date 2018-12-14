@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { Search, Icon } from "semantic-ui-react";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 
 import * as authActions from "../../../store/actions/authActions";
@@ -42,6 +43,11 @@ class Header extends Component {
     );
   }
 }
+
+Component.propTypes = {
+  username: PropTypes.string,
+  showMenu: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {
