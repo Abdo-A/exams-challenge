@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { Menu, Sidebar, Search } from "semantic-ui-react";
+import { Menu, Sidebar, Search, Button } from "semantic-ui-react";
 import React, { Component } from "react";
 import withSizes from "react-sizes";
 
@@ -60,6 +60,11 @@ class MainMenu extends Component {
     e.currentTarget.style.color = "#04537B";
   };
 
+  handleLogOut = () => {
+    this.props.logOut();
+    this.props.history.replace("/");
+  };
+
   render() {
     const MainMenuStyles = {
       width: 200,
@@ -102,6 +107,12 @@ class MainMenu extends Component {
               />
             );
           })}
+          <Button
+            onClick={this.handleLogOut}
+            className="MainMenu__LogOutButton"
+          >
+            Log Out
+          </Button>
         </Sidebar>
       </>
     );
@@ -123,7 +134,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   showMenu: authActions.showMenu,
-  hideMenu: authActions.hideMenu
+  hideMenu: authActions.hideMenu,
+  logOut: authActions.logOut
 };
 
 export default connect(

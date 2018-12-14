@@ -17,5 +17,10 @@
   @media screen and (max-width: $small) {
     display: block;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
+}
+
+.MainMenu__LogOutButton {
+  margin-top: 20px;
 }
