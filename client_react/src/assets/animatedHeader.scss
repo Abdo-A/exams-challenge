@@ -3,25 +3,22 @@
 .Header--Animated {
   width: 100vw;
   height: 100vh;
-  color: white;
+  color: $primary-color;
   margin: 0;
   animation: swim 6s ease-in infinite alternate;
+  background-color: $grey01;
 }
 
 @keyframes swim {
   0% {
-    background-color: $secondary-color;
   }
   50% {
     padding-top: 90vh;
-    background-color: $primary-color;
   }
   75% {
     padding-left: 90vh;
-    background-color: $primary-color;
   }
   100% {
     padding-right: 90vh;
-    background-color: $primary-color;
   }
 }

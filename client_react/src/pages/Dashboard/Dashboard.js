@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { Icon } from "semantic-ui-react";
 import React, { Component } from "react";
 import withSizes from "react-sizes";
 
