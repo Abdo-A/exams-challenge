@@ -85,7 +85,7 @@ class MainMenu extends Component {
         >
           <CloseMainMenuIcon closeMainMenu={this.props.hideMenu} />
           <div className="MainMenu__SearchContainer">
-            <Search placeholder="Search" />
+            <Search placeholder="Search" showNoResults={false} />
           </div>
           <h1 className="MainMenu__MenuHeader">coligo</h1>
 

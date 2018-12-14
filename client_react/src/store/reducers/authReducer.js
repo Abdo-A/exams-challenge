@@ -1,7 +1,7 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
-  loggedIn: true,
+  loggedIn: false,
   username: "Talia",
   menuVisible: false
 };
