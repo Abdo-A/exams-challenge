@@ -107,12 +107,9 @@ class MainMenu extends Component {
               />
             );
           })}
-          <Button
-            onClick={this.handleLogOut}
-            className="MainMenu__LogOutButton"
-          >
-            Log Out
-          </Button>
+          <div className="MainMenu__LogOutButtonWrapper">
+            <Button onClick={this.handleLogOut}>Log Out</Button>
+          </div>
         </Sidebar>
       </>
     );
