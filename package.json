@@ -4,7 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install --prefix client_react",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client_react",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client_react && npm run build --prefix client_react"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/Abdo-A/exams-challenge/issues"
   },
-  "homepage": "https://github.com/Abdo-A/exams-challenge#readme"
+  "homepage": "https://github.com/Abdo-A/exams-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  }
 }
