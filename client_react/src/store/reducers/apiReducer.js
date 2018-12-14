@@ -3,7 +3,7 @@ import * as actionTypes from "../actions/actionTypes";
 const INITIAL_STATE = {
   announcements: [],
   quizzes: [],
-  useFakeServices: false //When useFakeServices is false, the node js api is called
+  useFakeServices: true //When useFakeServices is false, the node js api is called
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -13,14 +13,7 @@ class DueDeclaration extends Component {
     }
 
     return (
-      <Card
-        style={{
-          width: "25%",
-          height: "100%",
-          margin: "0",
-          boxShadow: "rgba(0, 1, 0, 0.75) 1px 6px 18px -3px"
-        }}
-      >
+      <Card style={this.props.style}>
         <div className="DueDeclaration__ContentContainer">
           <div className="DueDeclaration__Header">
             <div className="DueDeclaration__Header__Left">What's due</div>

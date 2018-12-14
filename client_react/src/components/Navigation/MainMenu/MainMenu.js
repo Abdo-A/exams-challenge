@@ -1,11 +1,13 @@
-import { Menu, Sidebar } from "semantic-ui-react";
+import { Menu, Sidebar, Icon } from "semantic-ui-react";
 import React, { Component } from "react";
+import withSizes from "react-sizes";
 
 import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import pages from "../../../data/pagesData";
 
 import "./MainMenu.scss";
 import colors from "../../../assets/colors";
+import devicesSizes from "../../../assets/devices_sizes";
 
 class MainMenu extends Component {
   componentDidMount() {
@@ -55,6 +57,11 @@ class MainMenu extends Component {
   };
 
   render() {
+    const MainMenuStyles = {
+      width: 200,
+      backgroundImage: "linear-gradient(#084361, #3C8399)"
+    };
+
     return (
       <Sidebar
         as={Menu}
@@ -64,10 +71,7 @@ class MainMenu extends Component {
         vertical
         visible={true}
         width="thin"
-        style={{
-          width: 200,
-          backgroundImage: "linear-gradient(#084361, #3C8399)"
-        }}
+        style={MainMenuStyles}
       >
         <h1 className="MainMenu__MenuHeader">coligo</h1>
         {pages.map(page => {
@@ -88,4 +92,11 @@ class MainMenu extends Component {
   }
 }
 
-export default MainMenu;
+//Adding sizes
+const mapSizesToProps = ({ width }) => ({
+  deviceWidth: width
+});
+
+const MainMenuWithSizes = withSizes(mapSizesToProps)(MainMenu);
+
+export default MainMenuWithSizes;

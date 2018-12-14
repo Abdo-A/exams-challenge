@@ -9,28 +9,28 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <div className="Header__Heading">
-          <h1>Welcome {this.props.username},</h1>
-        </div>
-        <div className="Header__LeftContainer">
-          <div className="Header__LeftContainer__SearchInput">
+        <div className="Header__Heading">Welcome {this.props.username},</div>
+        <div className="Header__RightContainer">
+          <div className="Header__SearchInput">
             <Search placeholder="Search" showNoResults={false} />
           </div>
-          <Badge
-            iconName="bell"
-            count={1}
-            content="Notifications to be shown here"
-          />
-          <Badge
-            iconName="envelope"
-            count={3}
-            content="Messages to be shown here"
-          />
-          <img
-            className="Header__LeftContainer__ProfileImage"
-            src="https://cdn140.picsart.com/253231893022202.jpg?c256x256"
-            alt="Profile"
-          />
+          <div className="Header__BadgesContainer">
+            <Badge
+              iconName="bell"
+              count={1}
+              content="Notifications to be shown here"
+            />
+            <Badge
+              iconName="envelope"
+              count={3}
+              content="Messages to be shown here"
+            />
+            <img
+              className="Header__ProfileImage"
+              src="https://cdn140.picsart.com/253231893022202.jpg?c256x256"
+              alt="Profile"
+            />
+          </div>
         </div>
       </div>
     );

@@ -7,13 +7,7 @@ import exams_time from "../../../assets/images/exams_time.jpeg";
 class ExamsDeclaration extends Component {
   render() {
     return (
-      <Card
-        style={{
-          width: "100%",
-          height: "100%",
-          boxShadow: "rgba(0, 1, 0, 0.75) 1px 6px 18px -3px"
-        }}
-      >
+      <Card style={this.props.style}>
         <div className="ExamsDeclaration__ContentContainer">
           <div className="ExamsDeclaration__Left">
             <p className="ExamsDeclaration__Header">Exams Time</p>
@@ -24,7 +18,10 @@ class ExamsDeclaration extends Component {
             <p className="ExamsDeclaration__Quote">
               "Nothing happens until something movies." ~ Albert Einstein
             </p>
-            <Button className="ExamsDeclaration__Button">
+            <Button
+              className="ExamsDeclaration__Button"
+              style={{ fontSize: 13 }}
+            >
               View exams tips
             </Button>
           </div>

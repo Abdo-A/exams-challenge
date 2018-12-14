@@ -1,5 +1,21 @@
+@import "../../assets/devices_sizes.scss";
+@import "../../assets/colors.scss";
+
 .Dashboard {
   padding: 20px;
+
+  .Dashboard__HeadingMobile {
+    display: none;
+
+    @media screen and (max-width: $xmedium) {
+      display: block;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 20px;
+      color: $primary-color;
+    }
+  }
+
   .Dashboard__ExamsDeclarationContainer {
     width: 100%;
     min-height: 35vh;
@@ -12,5 +28,15 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 20px 0;
+
+    @media screen and (max-width: $large) {
+      flex-direction: column;
+    }
+
+    .Dashboard__AnnouncementsDeclaration {
+      width: 73%;
+      height: 85%;
+      box-shadow: rgba(0, 1, 0, 0.75) 1px 6px 18px -3px;
+    }
   }
 }

@@ -13,13 +13,7 @@ class AnnouncementsDeclaration extends Component {
     }
 
     return (
-      <Card
-        style={{
-          width: "73%",
-          height: "85%",
-          boxShadow: "rgba(0, 1, 0, 0.75) 1px 6px 18px -3px"
-        }}
-      >
+      <Card style={this.props.style}>
         <div className="AnnouncementsDeclaration__ContentContainer">
           <div className="AnnouncementsDeclaration__Header">
             <div className="AnnouncementsDeclaration__Header__Left">
@@ -36,14 +30,18 @@ class AnnouncementsDeclaration extends Component {
           </p>
 
           {this.props.announcements
-            ? this.props.announcements.map(announcement => (
-                <AnnouncementsDeclarationItem
-                  name={announcement.name}
-                  subject={announcement.subject}
-                  image={announcement.image}
-                  announcement={announcement.announcement}
-                  key={announcement.name + announcement.image}
-                />
+            ? this.props.announcements.map((announcement, i) => (
+                <div key={announcement.name + announcement.image}>
+                  <AnnouncementsDeclarationItem
+                    name={announcement.name}
+                    subject={announcement.subject}
+                    image={announcement.image}
+                    announcement={announcement.announcement}
+                  />
+                  {i !== this.props.announcements.length - 1 ? (
+                    <hr className="AnnouncementsDeclaration__ItemsSeparator" />
+                  ) : null}
+                </div>
               ))
             : null}
 

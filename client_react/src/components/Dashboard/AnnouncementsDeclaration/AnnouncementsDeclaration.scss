@@ -1,4 +1,5 @@
 @import "../../../assets/colors.scss";
+@import "../../../assets/devices_sizes.scss";
 
 .AnnouncementsDeclaration__ContentContainer {
   padding: 15px;
@@ -34,5 +35,17 @@
     color: $grey02;
     font-size: 13px;
     text-align: left;
+  }
+
+  .AnnouncementsDeclaration__ItemsSeparator {
+    height: 1px;
+    color: $grey04;
+    background-color: $grey04;
+    border: none;
+    display: none;
+
+    @media screen and (max-width: $large) {
+      display: block;
+    }
   }
 }

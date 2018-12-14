@@ -1,4 +1,5 @@
 @import "../../../assets/colors.scss";
+@import "../../../assets/devices_sizes.scss";
 
 .Header {
   height: 8vh;
@@ -10,24 +11,70 @@
   padding-left: 60px;
   margin-bottom: 40px;
 
-  .Header__Heading {
-    color: $grey03;
+  @media screen and (max-width: $large) {
+    padding-left: 20px;
   }
 
-  .Header__LeftContainer {
+  @media screen and (max-width: $small) {
+    padding-left: 0;
+  }
+
+  .Header__Heading {
+    color: $grey03;
+    font-size: 34px;
+
+    @media screen and (max-width: $large) {
+      font-size: 28px;
+    }
+
+    @media screen and (max-width: $xmedium) {
+      display: none;
+    }
+  }
+
+  .Header__RightContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 20px;
 
-    .Header__LeftContainer__SearchInput {
-      margin-right: 50px;
+    @media screen and (max-width: $xmedium) {
+      width: 100%;
+      justify-content: space-between;
     }
 
-    .Header__LeftContainer__ProfileImage {
-      width: 40px;
-      border-radius: 50%;
-      cursor: pointer;
+    @media screen and (max-width: $tiny) {
+      flex-direction: column;
+      margin-top: 30px;
     }
+
+    .Header__BadgesContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      @media screen and (max-width: $tiny) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .Header__SearchInput {
+        margin-right: 50px;
+      }
+
+      .Header__ProfileImage {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ui.icon.input > input[placeholder="Search"] {
+  @media screen and (max-width: $xtiny) {
+    font-size: 80%;
   }
 }
