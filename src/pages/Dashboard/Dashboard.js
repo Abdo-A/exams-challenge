@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import "./Dashboard.scss";
-import Header from "../../components/PageTop/Header/Header";
-import { Card } from "semantic-ui-react";
-import ExamsDeclaration from "../../components/Dashboard/ExamsDeclaration/ExamsDeclaration";
+
+import announcements from "../../api/fakeAnnouncmentService";
 import AnnouncementsDeclaration from "../../components/Dashboard/AnnouncementsDeclaration/AnnouncementsDeclaration";
 import DueDeclaration from "../../components/Dashboard/DueDeclaration/DueDeclaration";
-import announcements from "../../data/announcements";
-import quizzes from "../../data/quizzes";
+import ExamsDeclaration from "../../components/Dashboard/ExamsDeclaration/ExamsDeclaration";
+import Header from "../../components/PageTop/Header/Header";
+import quizzes from "../../api/fakeQuizesService";
+
+import "./Dashboard.scss";
 
 class Dashboard extends Component {
   render() {

@@ -29,14 +29,14 @@
     }
 
     .Home__Button {
-      background-color: $green02;
+      background-color: $green01;
       color: white;
-      border: 2px solid $green02;
+      border: 2px solid $green01;
       margin-top: 50px;
 
       &:hover {
         background-color: white;
-        color: $green02;
+        color: $green01;
       }
     }
 
