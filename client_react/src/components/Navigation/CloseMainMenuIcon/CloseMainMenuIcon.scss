@@ -1,0 +1,11 @@
+@import "../../../assets/devices_sizes.scss";
+
+.CloseMainMenuIcon {
+  color: white;
+  display: none;
+  padding: 10px 0 0 80%;
+
+  @media screen and (max-width: $medium) {
+    display: inline-block;
+  }
+}

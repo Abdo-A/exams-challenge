@@ -1,13 +1,17 @@
-import { Menu, Sidebar, Icon } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { Menu, Sidebar, Icon, Search } from "semantic-ui-react";
 import React, { Component } from "react";
 import withSizes from "react-sizes";
 
+import * as authActions from "../../../store/actions/authActions";
+import Backdrop from "../../UI/Backdrop/Backdrop";
+import CloseMainMenuIcon from "../CloseMainMenuIcon/CloseMainMenuIcon";
+import colors from "../../../assets/colors";
+import devicesSizes from "../../../assets/devices_sizes";
 import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import pages from "../../../data/pagesData";
 
 import "./MainMenu.scss";
-import colors from "../../../assets/colors";
-import devicesSizes from "../../../assets/devices_sizes";
 
 class MainMenu extends Component {
   componentDidMount() {
@@ -63,31 +67,43 @@ class MainMenu extends Component {
     };
 
     return (
-      <Sidebar
-        as={Menu}
-        animation="overlay"
-        icon="labeled"
-        inverted
-        vertical
-        visible={true}
-        width="thin"
-        style={MainMenuStyles}
-      >
-        <h1 className="MainMenu__MenuHeader">coligo</h1>
-        {pages.map(page => {
-          return (
-            <MainMenuItem
-              handleClick={this.handleMenuItemClick}
-              handleMouseEnter={this.handleMenuItemHover}
-              handleMouseLeave={this.settleTabAccordingToPath}
-              icon={page.icon}
-              name={page.name}
-              path={page.path}
-              key={page.path}
-            />
-          );
-        })}
-      </Sidebar>
+      <>
+        <Backdrop show={this.props.menuVisible} onClick={this.props.hideMenu} />
+        <Sidebar
+          as={Menu}
+          animation="overlay"
+          icon="labeled"
+          inverted
+          vertical
+          visible={
+            this.props.deviceWidth > devicesSizes.medium
+              ? true
+              : this.props.menuVisible
+          }
+          width="thin"
+          style={MainMenuStyles}
+        >
+          <CloseMainMenuIcon closeMainMenu={this.props.hideMenu} />
+          <div className="MainMenu__SearchContainer">
+            <Search placeholder="Search" />
+          </div>
+          <h1 className="MainMenu__MenuHeader">coligo</h1>
+
+          {pages.map(page => {
+            return (
+              <MainMenuItem
+                handleClick={this.handleMenuItemClick}
+                handleMouseEnter={this.handleMenuItemHover}
+                handleMouseLeave={this.settleTabAccordingToPath}
+                icon={page.icon}
+                name={page.name}
+                path={page.path}
+                key={page.path}
+              />
+            );
+          })}
+        </Sidebar>
+      </>
     );
   }
 }
@@ -96,7 +112,21 @@ class MainMenu extends Component {
 const mapSizesToProps = ({ width }) => ({
   deviceWidth: width
 });
-
 const MainMenuWithSizes = withSizes(mapSizesToProps)(MainMenu);
 
-export default MainMenuWithSizes;
+//Redux
+const mapStateToProps = state => {
+  return {
+    menuVisible: state.auth.menuVisible
+  };
+};
+
+const mapDispatchToProps = {
+  showMenu: authActions.showMenu,
+  hideMenu: authActions.hideMenu
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainMenuWithSizes);

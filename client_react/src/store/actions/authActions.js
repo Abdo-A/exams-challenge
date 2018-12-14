@@ -12,3 +12,15 @@ export const logOut = () => {
     type: actionTypes.LOG_OUT
   };
 };
+
+export const showMenu = () => {
+  return {
+    type: actionTypes.SHOW_MENU
+  };
+};
+
+export const hideMenu = () => {
+  return {
+    type: actionTypes.HIDE_MENU
+  };
+};

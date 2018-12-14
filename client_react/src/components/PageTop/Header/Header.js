@@ -1,16 +1,22 @@
+import { connect } from "react-redux";
+import { Search, Icon } from "semantic-ui-react";
 import React, { Component } from "react";
 
-import "./Header.scss";
-import { Search } from "semantic-ui-react";
+import * as authActions from "../../../store/actions/authActions";
 import Badge from "../Badge/Badge";
-import { connect } from "react-redux";
+
+import "./Header.scss";
 
 class Header extends Component {
   render() {
     return (
       <div className="Header">
         <div className="Header__Heading">Welcome {this.props.username},</div>
-        <div className="Header__RightContainer">
+        <div className="Header__Container">
+          <div className="Header__OpenMenuIcon" onClick={this.props.showMenu}>
+            <Icon name="bars" size="big" />
+          </div>
+
           <div className="Header__SearchInput">
             <Search placeholder="Search" showNoResults={false} />
           </div>
@@ -43,4 +49,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+  showMenu: authActions.showMenu
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

@@ -2,7 +2,8 @@ import * as actionTypes from "../actions/actionTypes";
 
 const INITIAL_STATE = {
   loggedIn: true,
-  username: "Talia"
+  username: "Talia",
+  menuVisible: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -19,6 +20,18 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         loggedIn: false,
         username: "Talia"
+      };
+
+    case actionTypes.SHOW_MENU:
+      return {
+        ...state,
+        menuVisible: true
+      };
+
+    case actionTypes.HIDE_MENU:
+      return {
+        ...state,
+        menuVisible: false
       };
     default:
       return state;
